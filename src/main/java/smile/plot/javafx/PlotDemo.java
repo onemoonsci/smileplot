@@ -74,7 +74,7 @@ public class PlotDemo {
     public static DataFrame loadIRIS() {
         if (iris == null) {
             try {
-                iris = Read.arff("iris.arff");
+                iris = Read.arff("src/test/data/iris.arff");
             } catch (IOException | ParseException | URISyntaxException ex) {
                 Logger.getLogger(PlotDemo.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -85,7 +85,7 @@ public class PlotDemo {
     public static double[] loadCOW() {
         if (cow == null) {
             try {
-                cow = Read.csv("cow.txt").column("V1").toDoubleArray();
+                cow = Read.csv("src/test/data/cow.txt").column("V1").toDoubleArray();
             } catch (URISyntaxException | IOException ex) {
                 Logger.getLogger(PlotDemo.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -96,7 +96,7 @@ public class PlotDemo {
     public static double[][] loadSIX() {
         if (six == null) {
             try {
-                six = Read.csv("six.txt", CSVFormat.DEFAULT.withDelimiter(' ')).toArray();
+                six = Read.csv("src/test/data/six.txt", CSVFormat.DEFAULT.withDelimiter(' ')).toArray();
             } catch (IOException | URISyntaxException ex) {
                 Logger.getLogger(PlotDemo.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -107,7 +107,7 @@ public class PlotDemo {
     public static double[][] loadZIP() {
         if (zip == null) {
             try {
-                zip = Read.csv("zip.train", CSVFormat.DEFAULT.withDelimiter(' ')).drop(0).toArray();
+                zip = Read.csv("src/test/data/zip.train", CSVFormat.DEFAULT.withDelimiter(' ')).drop(0).toArray();
             } catch (IOException | URISyntaxException ex) {
                 Logger.getLogger(PlotDemo.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -117,7 +117,7 @@ public class PlotDemo {
 
     public static DataFrame loadPenDigits() {
         try {
-            pendigits = Read.csv("pendigits.txt", CSVFormat.DEFAULT.withDelimiter('\t'));
+            pendigits = Read.csv("src/test/data/pendigits.txt", CSVFormat.DEFAULT.withDelimiter('\t'));
         } catch (IOException | URISyntaxException ex) {
             Logger.getLogger(PlotDemo.class.getName()).log(Level.SEVERE, null, ex);
         }
